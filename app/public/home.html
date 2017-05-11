@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en-us">
+		<meta charset="UFC-8">
+		<title>FriendFinder</title>
+		<link href="https://fonts.googleapis.com/css?family=BioRhyme" rel="stylesheet">
+	</head>
+	<body>
+		<h1>FriendFinder</h1>
+		<h2>Welcome to FriendFinder! Please enter your name and press the button!</h2>
+		<form>
+			<input id="name" type="text">
+		</form>
+		<br>
+		<button id="submit">Submit</button>
+	</body>
+</html>
+<style>
+	body {
+		background-color: #2FA5E4;
+	}
+
+	h1 {
+		color: white;
+		font-family: 'BioRhyme', serif;
+		text-align: center;
+		font-size: 75px;
+	}
+
+	h2 {
+		color: white;
+		font-family: 'BioRhyme', serif;
+		text-align: center;
+		font-size: 50px;
+	}
+
+	#name {
+		height: 50px;
+		width: 350px;
+		margin: auto;
+		display: block;
+		font-family: 'BioRhyme', serif;
+		font-size: 35px;
+	}
+
+	#submit {
+		height: 50px;
+		font-family: 'BioRhyme', serif;
+		font-size: 35px;
+		margin: auto;
+		display: block;
+
+	}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$("#submit").click(function() {
+		localStorage.setItem("name", $("#name").val());
+		console.log(localStorage.getItem("name"));
+		window.location = "survey.html"
+	});
+</script>
