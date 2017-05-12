@@ -1,0 +1,1 @@
+[{"name":"Sally","answers":["2","4","3","2","4","3","1","4","4","2"],"imageURL":"https://s-media-cache-ak0.pinimg.com/736x/93/8d/4b/938d4b1a8f8fad6ddb34ebdb57faf058.jpg"},{"name":"Samantha","answers":["4","4","4","3","1","3","4","5","4","3"],"imageURL":"https://img0.etsystatic.com/059/0/40526172/iusa_400x400.28924348_7hlw.jpg"}]

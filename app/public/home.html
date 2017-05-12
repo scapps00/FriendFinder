@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head lang="en-us">
-		<meta charset="UFC-8">
+		<meta charset="UTF-8">
 		<title>FriendFinder</title>
 		<link href="https://fonts.googleapis.com/css?family=BioRhyme" rel="stylesheet">
 	</head>
 	<body>
 		<h1>FriendFinder</h1>
-		<h2>Welcome to FriendFinder! Please enter your name and press the button!</h2>
-		<form>
-			<input id="name" type="text">
-		</form>
+		<h2>Welcome to FriendFinder!</h2>
 		<br>
-		<button id="submit">Submit</button>
+		<button id="start">Start</button>
 	</body>
 </html>
 <style>
@@ -43,7 +40,7 @@
 		font-size: 35px;
 	}
 
-	#submit {
+	#start {
 		height: 50px;
 		font-family: 'BioRhyme', serif;
 		font-size: 35px;
@@ -55,9 +52,7 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-	$("#submit").click(function() {
-		localStorage.setItem("name", $("#name").val());
-		console.log(localStorage.getItem("name"));
-		window.location = "survey.html"
+	$("#start").click(function() {
+		window.location = "http://localhost:3000/survey";
 	});
 </script>

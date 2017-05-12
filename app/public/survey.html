@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head lang="en-us">
-		<meta charset="UFC-8">
+		<meta charset="UTF-8">
 		<title>FriendFinder</title>
 		<link href="https://fonts.googleapis.com/css?family=BioRhyme" rel="stylesheet">
 	</head>
@@ -10,19 +10,81 @@
 		<h2>Please answer the questions to be matched with someone!</h2>
 		<h3>Rate each statement from 1 to 5 depending on how true it is for you</h3>
 		<form>
-				Dogs are better than cats.<br>
-				<input type="radio" name="dogs" value="1">1 (Not true at all)<br>
-				<input type="radio" name="dogs" value="2">2<br>
-				<input type="radio" name="dogs" value="3">3 (Neither true nor untrue)<br>
-				<input type="radio" name="dogs" value="4">4<br>
-				<input type="radio" name="dogs" value="5">5 (Absolutely true)<br>
+				1. Dogs are better than cats.<br>
+				<input type="radio" name="1" value="1">1 (Not true at all)<br>
+				<input type="radio" name="1" value="2">2<br>
+				<input type="radio" name="1" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="1" value="4">4<br>
+				<input type="radio" name="1" value="5">5 (Absolutely true)<br><br>
 
-				Dogs are better than cats.<br>
-				<input type="radio" name="dogs" value="1">1 (Not true at all)<br>
-				<input type="radio" name="dogs" value="2">2<br>
-				<input type="radio" name="dogs" value="3">3 (Neither true nor untrue)<br>
-				<input type="radio" name="dogs" value="4">4<br>
-				<input type="radio" name="dogs" value="5">5 (Absolutely true)<br>
+				2. I love to travel and experience new things.<br>
+				<input type="radio" name="2" value="1">1 (Not true at all)<br>
+				<input type="radio" name="2" value="2">2<br>
+				<input type="radio" name="2" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="2" value="4">4<br>
+				<input type="radio" name="2" value="5">5 (Absolutely true)<br><br>
+
+				3. I love learning.<br>
+				<input type="radio" name="3" value="1">1 (Not true at all)<br>
+				<input type="radio" name="3" value="2">2<br>
+				<input type="radio" name="3" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="3" value="4">4<br>
+				<input type="radio" name="3" value="5">5 (Absolutely true)<br><br>
+
+				4. I am a religious person.<br>
+				<input type="radio" name="4" value="1">1 (Not true at all)<br>
+				<input type="radio" name="4" value="2">2<br>
+				<input type="radio" name="4" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="4" value="4">4<br>
+				<input type="radio" name="4" value="5">5 (Absolutely true)<br><br>
+
+				5. I like myself.<br>
+				<input type="radio" name="5" value="1">1 (Not true at all)<br>
+				<input type="radio" name="5" value="2">2<br>
+				<input type="radio" name="5" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="5" value="4">4<br>
+				<input type="radio" name="5" value="5">5 (Absolutely true)<br><br>
+
+				6. I love making art.<br>
+				<input type="radio" name="6" value="1">1 (Not true at all)<br>
+				<input type="radio" name="6" value="2">2<br>
+				<input type="radio" name="6" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="6" value="4">4<br>
+				<input type="radio" name="6" value="5">5 (Absolutely true)<br><br>
+
+				7. I love lazy days where I relax and don't get much done.<br>
+				<input type="radio" name="7" value="1">1 (Not true at all)<br>
+				<input type="radio" name="7" value="2">2<br>
+				<input type="radio" name="7" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="7" value="4">4<br>
+				<input type="radio" name="7" value="5">5 (Absolutely true)<br><br>
+
+				8. I would have voted for Bernie Sanders for president.<br>
+				<input type="radio" name="8" value="1">1 (Not true at all)<br>
+				<input type="radio" name="8" value="2">2<br>
+				<input type="radio" name="8" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="8" value="4">4<br>
+				<input type="radio" name="8" value="5">5 (Absolutely true)<br><br>
+
+				9. I recycle.<br>
+				<input type="radio" name="9" value="1">1 (Not true at all)<br>
+				<input type="radio" name="9" value="2">2<br>
+				<input type="radio" name="9" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="9" value="4">4<br>
+				<input type="radio" name="9" value="5">5 (Absolutely true)<br><br>
+
+				10. I buy a lot of used items.<br>
+				<input type="radio" name="10" value="1">1 (Not true at all)<br>
+				<input type="radio" name="10" value="2">2<br>
+				<input type="radio" name="10" value="3">3 (Neither true nor untrue)<br>
+				<input type="radio" name="10" value="4">4<br>
+				<input type="radio" name="10" value="5">5 (Absolutely true)<br><br>
+
+				Your name?<br>
+				<input type="text" name="name"><br><br>
+
+				Last but not least, a photo of you!<br>
+				<input name="photo" type="text">
 		</form>
 		<br>
 		<button id="submit">Submit</button>
@@ -73,8 +135,25 @@
 		text-align: left;
 		margin-left: 550px;
 	}
+
+	[name=photo], [name=name] {
+		width: 400px;
+		font-family: 'BioRhyme', serif;
+		font-size: 35px;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-	$("[name='dogs'")
+	$("#submit").click(function() {
+		var newPerson = {
+			name: $("[name=name]").val()
+		};
+		var answers = [];
+		for (var i = 1; i<11; i++) {
+			answers.push($("[name = " + i +"]:checked").val());
+		};
+		newPerson.answers = answers;
+		newPerson.imageURL = $("[name = photo]").val();
+		$.post("http://localhost:3000/api/add", newPerson);
+	});
 </script>
