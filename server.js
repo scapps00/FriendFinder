@@ -23,7 +23,7 @@ app.post("/api/add", function(req, res) {
 	fs.readFile(path.join(__dirname, "/app/data/friends.js"), (err, data) => {
 		if (err) throw err;
 		var friends = JSON.parse(data);
-		var match = friends[compare(friends, newPerson)].name;
+		var match = friends[compare(friends, newPerson)];
 		res.send(match);
 		friends.push(newPerson);
 		fs.writeFile(path.join(__dirname, "/app/data/friends.js"), JSON.stringify(friends), (err) => {
@@ -42,7 +42,7 @@ function compare(oldGuys, newGuy) {
 		}
 		differenceArray.push(totalDifference);
 	}
-	var closestMatch = Math.max.apply(null, differenceArray);
+	var closestMatch = Math.min.apply(null, differenceArray);
 	var index = differenceArray.indexOf(closestMatch);
 	return index;
 }
