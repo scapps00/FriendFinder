@@ -32,6 +32,10 @@ app.post("/api/add", function(req, res) {
 	});	
 });
 
+app.get("/friendlist", function(req, res) {
+	res.sendFile(path.join(__dirname, "/app/data/friends.js"));
+});
+
 function compare(oldGuys, newGuy) {
 	var differenceArray = [];
 	for (var i = 0; i < oldGuys.length; i++) {

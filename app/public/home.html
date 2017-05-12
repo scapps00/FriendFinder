@@ -9,7 +9,10 @@
 		<h1>FriendFinder</h1>
 		<h2>Welcome to FriendFinder!</h2>
 		<br>
-		<button id="start">Start</button>
+		<a href="http://localhost:3000/survey"><button id="start">Start</button></a>
+		<br>
+		<br>
+		<div id="bottom"><span id="friendsList"><a href="http://localhost:3000/friendlist">API Friends List</a></span> | <a href="https://github.com/scapps00/FriendFinder">GitHub Repo</a></div>
 	</body>
 </html>
 <style>
@@ -46,13 +49,17 @@
 		font-size: 35px;
 		margin: auto;
 		display: block;
-
 	}
 
+	#friendsList, #bottom {
+		font-family: 'BioRhyme', serif;
+		font-size: 20px;
+		text-align: center;
+		color: white;
+	}
+
+	a:link, a:visited, a:hover, a:active {
+		color: white;
+		text-decoration: none;
+	}
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-	$("#start").click(function() {
-		window.location = "http://localhost:3000/survey";
-	});
-</script>
