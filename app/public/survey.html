@@ -154,6 +154,8 @@
 		};
 		newPerson.answers = answers;
 		newPerson.imageURL = $("[name = photo]").val();
-		$.post("http://localhost:3000/api/add", newPerson);
+		$.post("http://localhost:3000/api/add", newPerson).done(function(data) {
+			alert(data);
+		});
 	});
 </script>
