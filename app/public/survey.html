@@ -252,7 +252,7 @@
 		};
 		newPerson.answers = answers;
 		newPerson.imageURL = $("[name = photo]").val();
-		$.post("http://localhost:3000/api/add", newPerson).done(function(data) {
+		$.post("/api/add", newPerson).done(function(data) {
 			modal.style.display = "block";
 			$("#matchName").text(data.name + " is your best match!");
 			$("#matchImage").attr("src", data.imageURL);
