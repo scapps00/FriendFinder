@@ -3,6 +3,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var fs = require("fs");
+var htmlRoutes = require("./app/routing/htmlRoutes.js");
+var apiRoutes = require("./app/routing/apiRoutes.js");
 
 //sets up express app
 var app = express();
@@ -14,26 +16,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+app.get("/", function(req, res) {
+	htmlRoutes.home(req, res)
+});
+
 app.get("/survey", function(req, res) {
-	res.sendFile(path.join(__dirname, "/app/public/survey.html"));
+	htmlRoutes.survey(req, res)
+});
+
+app.get("/friendList", function(req, res) {
+	htmlRoutes.friendList(req, res)
 });
 
 app.post("/api/add", function(req, res) {
-	var newPerson = req.body;
-	fs.readFile(path.join(__dirname, "/app/data/friends.js"), (err, data) => {
-		if (err) throw err;
-		var friends = JSON.parse(data);
-		var match = friends[compare(friends, newPerson)];
-		res.send(match);
-		friends.push(newPerson);
-		fs.writeFile(path.join(__dirname, "/app/data/friends.js"), JSON.stringify(friends), (err) => {
-			if (err) throw err;
-		});
-	});	
-});
-
-app.get("/friendlist", function(req, res) {
-	res.sendFile(path.join(__dirname, "/app/data/friends.js"));
+	apiRoutes.add(req, res);	
 });
 
 function compare(oldGuys, newGuy) {
