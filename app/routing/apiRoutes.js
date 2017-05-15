@@ -27,16 +27,18 @@ function compare(oldGuys, newGuy) {
 	return index;
 }
 
-exports.add = function(req, res) {
-	var newPerson = req.body;
-	fs.readFile(path.join(__dirname, "../data/friends.js"), (err, data) => {
-		if (err) throw err;
-		var friends = JSON.parse(data);
-		var match = friends[compare(friends, newPerson)];
-		res.send(match);
-		friends.push(newPerson);
-		fs.writeFile(path.join(__dirname, "../data/friends.js"), JSON.stringify(friends), (err) => {
+module.exports = function(app) {
+	app.post("/api/add", function(req, res) {
+		var newPerson = req.body;
+		fs.readFile(path.join(__dirname, "../data/friends.js"), (err, data) => {
 			if (err) throw err;
-		});
+			var friends = JSON.parse(data);
+			var match = friends[compare(friends, newPerson)];
+			res.send(match);
+			friends.push(newPerson);
+			fs.writeFile(path.join(__dirname, "../data/friends.js"), JSON.stringify(friends), (err) => {
+				if (err) throw err;
+			});
+		});	
 	});
 }

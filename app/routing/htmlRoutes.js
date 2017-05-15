@@ -12,16 +12,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-exports.home = function(req, res) {
-			res.sendFile(path.join(__dirname, "../public/home.html"));
-		}
+module.exports = function(app) {
+	app.get("/", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/home.html"));
+	});
 
-exports.survey = function(req, res) {
-			res.sendFile(path.join(__dirname, "../public/survey.html"));
-		}
+	app.get("/survey", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/survey.html"));
+	});
 
-exports.friendList = function(req, res) {
-			res.sendFile(path.join(__dirname, "../data/friends.js"));
-		}
-
-
+	app.get("/friendList", function(req, res) {
+		res.sendFile(path.join(__dirname, "../data/friends.js"));
+	});
+}
